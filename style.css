@@ -1,0 +1,53 @@
+body
+{
+    align-content: center;
+}
+#upperMenu1
+{
+    float: none;
+    margin-left: auto;
+    border: 2px solid none;
+    background: #333333;
+    border-radius: 8px;
+    display: inline-block;
+    width: 100%;
+}
+
+#upperMenuButtons
+{
+    float: left;
+    margin: auto;
+    margin-bottom: 3px;
+    padding: 3px;
+}
+
+.select
+{
+    background: transparent;
+    color: darkgray;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.buttons
+{
+    background-color: transparent; 
+    border: none;
+    color: darkgray;
+    padding: 8px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#upperMenuSelection
+{
+    float: right;
+    margin: auto;
+    color: darkgray;
+    
+}
