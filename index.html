@@ -26,11 +26,11 @@
             <div id="profile" style="border-radius: 20px">
                 <img class="img-circle" src="profile.png">
                 <br>
-                <a href="https://facebook.com"><img src="facebook.png"></a>
+                <a href="https://facebook.com"><img src="facebook.png" class="media"></a>
                 <br>
-                <a href="https://twitter.com"><img src="twitter.png"></a>
+                <a href="https://twitter.com"><img src="twitter.png" class="media"></a>
                 <br>
-                <a href="https://linkedin.com"><img src="linked.png"></a>
+                <a href="https://linkedin.com"><img src="linked.png" class="media"></a>
             </div>
             <div id="content"></div>
         </div>
@@ -149,15 +149,19 @@
                         document.getElementById("content").innerHTML = "";
                         
                         var mycont = document.createElement("P");
-                        var cont = document.createTextNode("Michal Novotný");
+                        var cont = document.createTextNode("Linux systems / servers administration.");
                         mycont.appendChild(cont);
                         document.getElementById("content").appendChild(mycont);
                         mycont = document.createElement("P");
-                        cont = document.createTextNode("michal.novotny@akademiasovy.sk");
+                        cont = document.createTextNode("Programming in: C, Python, Shell script.");
                         mycont.appendChild(cont);
                         document.getElementById("content").appendChild(mycont);
                         mycont = document.createElement("P");
-                        cont = document.createTextNode("+421 949 288 492");
+                        cont = document.createTextNode("Basics in: Java, JavaScript, HTML, SQL.");
+                        mycont.appendChild(cont);
+                        document.getElementById("content").appendChild(mycont);
+                        mycont = document.createElement("P");
+                        cont = document.createTextNode("Hardware maintenance");
                         mycont.appendChild(cont);
                         document.getElementById("content").appendChild(mycont);
                     }
@@ -172,15 +176,15 @@
                         document.getElementById("content").innerHTML = "";
                         
                         var mycont = document.createElement("P");
-                        var cont = document.createTextNode("Michal Novotný");
+                        var cont = document.createTextNode("Learning and trying new things");
                         mycont.appendChild(cont);
                         document.getElementById("content").appendChild(mycont);
                         mycont = document.createElement("P");
-                        cont = document.createTextNode("michal.novotny@akademiasovy.sk");
+                        cont = document.createTextNode("Inline skating, tourism...");
                         mycont.appendChild(cont);
                         document.getElementById("content").appendChild(mycont);
                         mycont = document.createElement("P");
-                        cont = document.createTextNode("+421 949 288 492");
+                        cont = document.createTextNode("Playing computer games, listening to music ...");
                         mycont.appendChild(cont);
                         document.getElementById("content").appendChild(mycont);
                     }

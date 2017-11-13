@@ -45,16 +45,7 @@ body
     
 }
 
-.profile
-{
-    float: right;
-    margin: auto;
-    margin-bottom: 3px;
-    padding: 3px;
-}
-
-
-.content
+#profile
 {
     float: left;
     margin: auto;
@@ -62,13 +53,22 @@ body
     padding: 3px;
 }
 
-.main
+
+#content
+{
+    float: left;
+    margin: auto;
+    margin-bottom: 3px;
+    padding: 3px;
+}
+
+#main
 {
     float: none;
     margin-left: auto;
     border: 2px solid none;
     border-radius: 8px;
-    display: inline-block;
+
     width: 100%;
 }
 
@@ -79,10 +79,24 @@ body
     color: darkgray;
     
 }
-.img-circle {
+
+
+.img-circle 
+{
     border-radius: 50%;
-    width: 25%;
-    height: 25%;
+    width: 35%;
+    height: 35%;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
+}
+
+.media
+{
+    border-radius: 50%;
+    width: 15%;
+    height: 15%;
     position: relative;
     display: inline-block;
     overflow: hidden;
