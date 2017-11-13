@@ -42,6 +42,34 @@ body
     margin: 4px;
     cursor: pointer;
     border-radius: 20px;
+    
+}
+
+.profile
+{
+    float: right;
+    margin: auto;
+    margin-bottom: 3px;
+    padding: 3px;
+}
+
+
+.content
+{
+    float: left;
+    margin: auto;
+    margin-bottom: 3px;
+    padding: 3px;
+}
+
+.main
+{
+    float: none;
+    margin-left: auto;
+    border: 2px solid none;
+    border-radius: 8px;
+    display: inline-block;
+    width: 100%;
 }
 
 #upperMenuSelection
@@ -50,4 +78,13 @@ body
     margin: auto;
     color: darkgray;
     
+}
+.img-circle {
+    border-radius: 50%;
+    width: 25%;
+    height: 25%;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
 }

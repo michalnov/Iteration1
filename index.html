@@ -6,12 +6,12 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src="myscript.js"></script>
     </head>
-    <body style="background-color: white;" >
+    <body style="background-color: silver;" onload="show('aboutMe');">
         <div id="upperMenu1">
             <span id="upperMenuButtons" style="align-self: left">
-                <input type="button" class="buttons" id="aboutMe" value="Info About Me" onmouseover="hilight('aboutMe')" onmouseout="hilight('non')">
-                <input type="button" class="buttons" id="mySkills" value="My Skills" onmouseover="hilight('mySkills')" onmouseout="hilight('non')">
-                <input type="button" class="buttons" id="myHobbies" value="My Hobbies" onmouseover="hilight('myHobbies')" onmouseout="hilight('non')">
+                <input type="button" class="buttons" id="aboutMe" value="Info About Me" onmouseover="hilight('aboutMe')" onmouseout="hilight('non')" onclick="show('aboutMe')">
+                <input type="button" class="buttons" id="mySkills" value="My Skills" onmouseover="hilight('mySkills')" onmouseout="hilight('non')"onclick="show('mySkills')">
+                <input type="button" class="buttons" id="myHobbies" value="My Hobbies" onmouseover="hilight('myHobbies')" onmouseout="hilight('non')" onclick="show('myHobbies')">
             </span>
             <span id="upperMenuSelection" style="align-self: right">
                 Theme: 
@@ -22,43 +22,54 @@
             </span>
         </div> 
         <br>
-        <div id="content"></div>
+        <div id="main">
+            <div id="profile" style="border-radius: 20px">
+                <img class="img-circle" src="profile.png">
+                <br>
+                <a href="https://facebook.com"><img src="facebook.png"></a>
+                <br>
+                <a href="https://twitter.com"><img src="twitter.png"></a>
+                <br>
+                <a href="https://linkedin.com"><img src="linked.png"></a>
+            </div>
+            <div id="content"></div>
+        </div>
+        
         
         <script>
             var section = "aboutMe";
             var theme = "light";
             var button1 = document.getElementById("aboutMe");
-            var button3 = document.getElementById("mySkills");
-            var button2 = document.getElementById("myHobbies");
-            var content = document.getElementById("content");
+            var button2 = document.getElementById("mySkills");
+            var button3 = document.getElementById("myHobbies");
             
             function changeTheme()
             {
                 var menu =document.getElementById("upperMenu1");
                 var theme = document.getElementById("theme");
-                var button1 = document.getElementById("aboutMe");
-                var button3 = document.getElementById("mySkills");
-                var button2 = document.getElementById("myHobbies");
+                
                 if(theme.value === "light")
                    {
-                        document.body.style.background = "white";
+                        document.body.style.background = "silver";
+                        document.getElementById("content").style.color = "black";
                    }
                 else
                    {
                        document.body.style.background = "black";
-                       menu.style.background = "#333333";
+                       document.getElementById("content").style.color = "limegreen";
+                       //menu.style.background = "#333333";
                    }
             }
             
             function hilight(toHilight)
             {
-                var button1 = document.getElementById("aboutMe");
-                var button2 = document.getElementById("mySkills");
-                var button3 = document.getElementById("myHobbies");
                 var content = document.getElementById("content");
                 
                 if(toHilight == "non")
                     {
+                        button1.style.color = "darkgray";
+                        button2.style.color = "darkgray";
+                        button3.style.color = "darkgray";
                         button1.style.border = "none";
                         button2.style.border = "none";
                         button3.style.border = "none";
@@ -71,12 +82,110 @@
                 else if(toHilight == "mySkills")
                     {
                         button2.style.borderBottom = "2px solid lightgreen";
+                        button2.style.color = "white";
                     }
                 else if(toHilight == "myHobbies")
                     {
                         button3.style.borderBottom = "2px solid lightgreen";
+                        button3.style.color = "white";
+                    }
+                if(section == "aboutMe")
+                    {
+                        
+                        button1.style.borderBottom = "2px solid orange";
+                        button1.style.color = "orange";
+                    }
+                else if(section == "mySkills")
+                    {
+                        
+                        button2.style.borderBottom = "2px solid orange";
+                        button2.style.color = "orange";
+                    }
+                else if(section == "myHobbies")
+                    {
+                        
+                        button3.style.borderBottom = "2px solid orange";
+                        button3.style.color = "orange";
                     }
             }
+            
+            function show(toshow)
+            {                
+                //var content = document.getElementById("content");
+                
+                hilight('non');
+                if(toshow == "aboutMe")
+                    {   //First Name, Last Name, Email, Phone
+                        
+                        window.section = "aboutMe";
+                        button1.style.borderBottom = "2px solid lightgreen";
+                        button1.style.color = "oranged";
+                        hilight('non');
+                        
+                        document.getElementById("content").innerHTML = "";
+                        
+                        var mycont = document.createElement("P");
+                        var cont = document.createTextNode("Michal Novotný");
+                        mycont.appendChild(cont);
+                        document.getElementById("content").appendChild(mycont);
+                        mycont = document.createElement("P");
+                        cont = document.createTextNode("michal.novotny@akademiasovy.sk");
+                        mycont.appendChild(cont);
+                        document.getElementById("content").appendChild(mycont);
+                        mycont = document.createElement("P");
+                        cont = document.createTextNode("+421 949 288 492");
+                        mycont.appendChild(cont);
+                        document.getElementById("content").appendChild(mycont);                    
+                        
+                    }
+                else if(toshow == "mySkills")
+                    {   //
+                        
+                        window.section = "mySkills";
+                        button2.style.borderBottom = "2px solid lightgreen";
+                        button2.style.color = "oranged";
+                        hilight('non');
+                        
+                        document.getElementById("content").innerHTML = "";
+                        
+                        var mycont = document.createElement("P");
+                        var cont = document.createTextNode("Michal Novotný");
+                        mycont.appendChild(cont);
+                        document.getElementById("content").appendChild(mycont);
+                        mycont = document.createElement("P");
+                        cont = document.createTextNode("michal.novotny@akademiasovy.sk");
+                        mycont.appendChild(cont);
+                        document.getElementById("content").appendChild(mycont);
+                        mycont = document.createElement("P");
+                        cont = document.createTextNode("+421 949 288 492");
+                        mycont.appendChild(cont);
+                        document.getElementById("content").appendChild(mycont);
+                    }
+                else if(toshow == "myHobbies")
+                    {   //
+                        
+                        window.section = "myHobbies";
+                        button3.style.borderBottom = "2px solid lightgreen";
+                        button3.style.color = "oranged";
+                        hilight('non');
+                        
+                        document.getElementById("content").innerHTML = "";
+                        
+                        var mycont = document.createElement("P");
+                        var cont = document.createTextNode("Michal Novotný");
+                        mycont.appendChild(cont);
+                        document.getElementById("content").appendChild(mycont);
+                        mycont = document.createElement("P");
+                        cont = document.createTextNode("michal.novotny@akademiasovy.sk");
+                        mycont.appendChild(cont);
+                        document.getElementById("content").appendChild(mycont);
+                        mycont = document.createElement("P");
+                        cont = document.createTextNode("+421 949 288 492");
+                        mycont.appendChild(cont);
+                        document.getElementById("content").appendChild(mycont);
+                    }
+            }
+            
         </script>
         
     </body>
