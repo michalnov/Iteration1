@@ -1,196 +1,195 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Iteration1</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script type="text/javascript" src="myscript.js"></script>
-    </head>
-    <body style="background-color: silver;" onload="show('aboutMe');">
-        <div id="upperMenu1">
-            <span id="upperMenuButtons" style="align-self: left">
-                <input type="button" class="buttons" id="aboutMe" value="Info About Me" onmouseover="hilight('aboutMe')" onmouseout="hilight('non')" onclick="show('aboutMe')">
-                <input type="button" class="buttons" id="mySkills" value="My Skills" onmouseover="hilight('mySkills')" onmouseout="hilight('non')"onclick="show('mySkills')">
-                <input type="button" class="buttons" id="myHobbies" value="My Hobbies" onmouseover="hilight('myHobbies')" onmouseout="hilight('non')" onclick="show('myHobbies')">
-            </span>
-            <span id="upperMenuSelection" style="align-self: right">
-                Theme: 
-                <select class="select" id="theme" onchange="changeTheme()">
-                    <option value="light">Light</option>
-                    <option value="dark">Dark</option>
-                </select>
-            </span>
-        </div> 
-        <br>
-        <div id="main">
-            <div id="profile" style="border-radius: 20px">
-                <img class="img-circle" src="profile.png">
-                <br>
-                <a href="https://facebook.com"><img src="facebook.png" class="media"></a>
-                <br>
-                <a href="https://twitter.com"><img src="twitter.png" class="media"></a>
-                <br>
-                <a href="https://linkedin.com"><img src="linked.png" class="media"></a>
-            </div>
-            <div id="content"></div>
-        </div>
-        
-        
-        <script>
-            var section = "aboutMe";
-            var theme = "light";
-            var button1 = document.getElementById("aboutMe");
-            var button2 = document.getElementById("mySkills");
-            var button3 = document.getElementById("myHobbies");
-            
-            function changeTheme()
-            {
-                var menu =document.getElementById("upperMenu1");
-                var theme = document.getElementById("theme");
-                
-                if(theme.value === "light")
-                   {
-                        document.body.style.background = "silver";
-                        document.getElementById("content").style.color = "black";
-                   }
-                else
-                   {
-                       document.body.style.background = "black";
-                       document.getElementById("content").style.color = "limegreen";
-                       //menu.style.background = "#333333";
-                   }
-            }
-            
-            function hilight(toHilight)
-            {
-                var content = document.getElementById("content");
-                
-                if(toHilight == "non")
-                    {
-                        button1.style.color = "darkgray";
-                        button2.style.color = "darkgray";
-                        button3.style.color = "darkgray";
-                        button1.style.border = "none";
-                        button2.style.border = "none";
-                        button3.style.border = "none";
-                    }
-                else if(toHilight == "aboutMe")
-                    {
-                        button1.style.borderBottom = "2px solid lightgreen";
-                        button1.style.color = "white";
-                    }
-                else if(toHilight == "mySkills")
-                    {
-                        button2.style.borderBottom = "2px solid lightgreen";
-                        button2.style.color = "white";
-                    }
-                else if(toHilight == "myHobbies")
-                    {
-                        button3.style.borderBottom = "2px solid lightgreen";
-                        button3.style.color = "white";
-                    }
-                if(section == "aboutMe")
-                    {
-                        
-                        button1.style.borderBottom = "2px solid orange";
-                        button1.style.color = "orange";
-                    }
-                else if(section == "mySkills")
-                    {
-                        
-                        button2.style.borderBottom = "2px solid orange";
-                        button2.style.color = "orange";
-                    }
-                else if(section == "myHobbies")
-                    {
-                        
-                        button3.style.borderBottom = "2px solid orange";
-                        button3.style.color = "orange";
-                    }
-            }
-            
-            function show(toshow)
-            {                
-                //var content = document.getElementById("content");
-                
-                hilight('non');
-                if(toshow == "aboutMe")
-                    {   //First Name, Last Name, Email, Phone
-                        
-                        window.section = "aboutMe";
-                        button1.style.borderBottom = "2px solid lightgreen";
-                        button1.style.color = "oranged";
-                        hilight('non');
-                        
-                        document.getElementById("content").innerHTML = "";
-                        
-                        var mycont = document.createElement("P");
-                        var cont = document.createTextNode("Michal Novotný");
-                        mycont.appendChild(cont);
-                        document.getElementById("content").appendChild(mycont);
-                        mycont = document.createElement("P");
-                        cont = document.createTextNode("michal.novotny@akademiasovy.sk");
-                        mycont.appendChild(cont);
-                        document.getElementById("content").appendChild(mycont);
-                        mycont = document.createElement("P");
-                        cont = document.createTextNode("+421 949 288 492");
-                        mycont.appendChild(cont);
-                        document.getElementById("content").appendChild(mycont);                    
-                        
-                    }
-                else if(toshow == "mySkills")
-                    {   //
-                        
-                        window.section = "mySkills";
-                        button2.style.borderBottom = "2px solid lightgreen";
-                        button2.style.color = "oranged";
-                        hilight('non');
-                        
-                        document.getElementById("content").innerHTML = "";
-                        
-                        var mycont = document.createElement("P");
-                        var cont = document.createTextNode("Linux systems / servers administration.");
-                        mycont.appendChild(cont);
-                        document.getElementById("content").appendChild(mycont);
-                        mycont = document.createElement("P");
-                        cont = document.createTextNode("Programming in: C, Python, Shell script.");
-                        mycont.appendChild(cont);
-                        document.getElementById("content").appendChild(mycont);
-                        mycont = document.createElement("P");
-                        cont = document.createTextNode("Basics in: Java, JavaScript, HTML, SQL.");
-                        mycont.appendChild(cont);
-                        document.getElementById("content").appendChild(mycont);
-                        mycont = document.createElement("P");
-                        cont = document.createTextNode("Hardware maintenance");
-                        mycont.appendChild(cont);
-                        document.getElementById("content").appendChild(mycont);
-                    }
-                else if(toshow == "myHobbies")
-                    {   //
-                        
-                        window.section = "myHobbies";
-                        button3.style.borderBottom = "2px solid lightgreen";
-                        button3.style.color = "oranged";
-                        hilight('non');
-                        
-                        document.getElementById("content").innerHTML = "";
-                        
-                        var mycont = document.createElement("P");
-                        var cont = document.createTextNode("Learning and trying new things");
-                        mycont.appendChild(cont);
-                        document.getElementById("content").appendChild(mycont);
-                        mycont = document.createElement("P");
-                        cont = document.createTextNode("Inline skating, tourism...");
-                        mycont.appendChild(cont);
-                        document.getElementById("content").appendChild(mycont);
-                        mycont = document.createElement("P");
-                        cont = document.createTextNode("Playing computer games, listening to music ...");
-                        mycont.appendChild(cont);
-                        document.getElementById("content").appendChild(mycont);
-                    }
-            }
-            
-        </script>
-        
-    </body>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iteration1</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="myscript.js"></script>
+</head>
+<body style="background-color: silver;" onload="show('aboutMe');">
+<div style="overflow:auto">
+  <div class="menu">
+    <div class="menuitem"><input type="button" class="buttons" id="aboutMe" value="Info About Me" onmouseover="hilight('aboutMe')" onmouseout="hilight('non')" onclick="show('aboutMe')"></div>
+    <div class="menuitem"><input type="button" class="buttons" id="mySkills" value="My Skills" onmouseover="hilight('mySkills')" onmouseout="hilight('non')"onclick="show('mySkills')"></div>
+    <div class="menuitem"><input type="button" class="buttons" id="myHobbies" value="My Hobbies" onmouseover="hilight('myHobbies')" onmouseout="hilight('non')" onclick="show('myHobbies')"></div>
+    <div class="menuitem">
+      <img class="img-circle" src="profile.png">
+    </div>
+    <div class="menuitem">
+        <a href="https://facebook.com"><img src="facebook.png" class="media" style="width: 30%;"></a>
+        <a href="https://twitter.com"><img src="twitter.png" class="media" style="width: 30%;"></a>
+        <a href="https://linkedin.com"><img src="linked.png" class="media" style="width: 30%;"></a>
+    </div>
+  </div>
+  <div id="content" style="margin: 5px;"></div>
+</div>
+<div id="selectth" style="color: black;text-align:left;padding:10px;margin-top:7px;">Theme: 
+  <select class="selecttheme" id="theme" onchange="changeTheme()" style="color: black;">
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+  </select>
+</div>
+
+  <script type="text/javascript">
+  var section = "aboutMe";
+  var theme = "light";
+  var button1 = document.getElementById("aboutMe");
+  var button2 = document.getElementById("mySkills");
+  var button3 = document.getElementById("myHobbies");
+
+  function changeTheme()
+  {
+      var menu =document.getElementById("upperMenu1");
+      var theme = document.getElementById("theme");
+
+      if(theme.value === "light")
+         {
+              document.body.style.background = "silver";
+              document.getElementById("content").style.color = "black";
+              document.getElementById("theme").style.color = "black";
+              document.getElementById("selectth").style.color = "black";
+         }
+      else
+         {
+             document.body.style.background = "black";
+             document.getElementById("content").style.color = "limegreen";
+             document.getElementById("theme").style.color = "silver";
+             document.getElementById("selectth").style.color = "silver";
+             //menu.style.background = "#333333";
+         }
+  }
+
+  function hilight(toHilight)
+  {
+      var content = document.getElementById("content");
+
+      if(toHilight == "non")
+          {
+              button1.style.color = "darkgray";
+              button2.style.color = "darkgray";
+              button3.style.color = "darkgray";
+              button1.style.border = "none";
+              button2.style.border = "none";
+              button3.style.border = "none";
+          }
+      else if(toHilight == "aboutMe")
+          {
+              button1.style.borderBottom = "2px solid lightgreen";
+              button1.style.color = "white";
+          }
+      else if(toHilight == "mySkills")
+          {
+              button2.style.borderBottom = "2px solid lightgreen";
+              button2.style.color = "white";
+          }
+      else if(toHilight == "myHobbies")
+          {
+              button3.style.borderBottom = "2px solid lightgreen";
+              button3.style.color = "white";
+          }
+      if(section == "aboutMe")
+          {
+
+              button1.style.borderBottom = "2px solid orange";
+              button1.style.color = "orange";
+          }
+      else if(section == "mySkills")
+          {
+
+              button2.style.borderBottom = "2px solid orange";
+              button2.style.color = "orange";
+          }
+      else if(section == "myHobbies")
+          {
+
+              button3.style.borderBottom = "2px solid orange";
+              button3.style.color = "orange";
+          }
+  }
+
+  function show(toshow)
+  {
+      //var content = document.getElementById("content");
+
+      hilight('non');
+      if(toshow == "aboutMe")
+          {   //First Name, Last Name, Email, Phone
+
+              window.section = "aboutMe";
+              button1.style.borderBottom = "2px solid lightgreen";
+              button1.style.color = "oranged";
+              hilight('non');
+
+              document.getElementById("content").innerHTML = "";
+
+              var mycont = document.createElement("P");
+              var cont = document.createTextNode("Michal Novotný");
+              mycont.appendChild(cont);
+              document.getElementById("content").appendChild(mycont);
+              mycont = document.createElement("P");
+              cont = document.createTextNode("michal.novotny@akademiasovy.sk");
+              mycont.appendChild(cont);
+              document.getElementById("content").appendChild(mycont);
+              mycont = document.createElement("P");
+              cont = document.createTextNode("+421 949 288 492");
+              mycont.appendChild(cont);
+              document.getElementById("content").appendChild(mycont);
+
+          }
+      else if(toshow == "mySkills")
+          {   //
+
+              window.section = "mySkills";
+              button2.style.borderBottom = "2px solid lightgreen";
+              button2.style.color = "oranged";
+              hilight('non');
+
+              document.getElementById("content").innerHTML = "";
+
+              var mycont = document.createElement("P");
+              var cont = document.createTextNode("Linux systems / servers administration.");
+              mycont.appendChild(cont);
+              document.getElementById("content").appendChild(mycont);
+              mycont = document.createElement("P");
+              cont = document.createTextNode("Programming in: C, Python, Shell script.");
+              mycont.appendChild(cont);
+              document.getElementById("content").appendChild(mycont);
+              mycont = document.createElement("P");
+              cont = document.createTextNode("Basics in: Java, JavaScript, HTML, SQL.");
+              mycont.appendChild(cont);
+              document.getElementById("content").appendChild(mycont);
+              mycont = document.createElement("P");
+              cont = document.createTextNode("Hardware maintenance");
+              mycont.appendChild(cont);
+              document.getElementById("content").appendChild(mycont);
+          }
+      else if(toshow == "myHobbies")
+          {   //
+
+              window.section = "myHobbies";
+              button3.style.borderBottom = "2px solid lightgreen";
+              button3.style.color = "oranged";
+              hilight('non');
+
+              document.getElementById("content").innerHTML = "";
+
+              var mycont = document.createElement("P");
+              var cont = document.createTextNode("Learning and trying new things");
+              mycont.appendChild(cont);
+              document.getElementById("content").appendChild(mycont);
+              mycont = document.createElement("P");
+              cont = document.createTextNode("Inline skating, tourism...");
+              mycont.appendChild(cont);
+              document.getElementById("content").appendChild(mycont);
+              mycont = document.createElement("P");
+              cont = document.createTextNode("Playing computer games, listening to music ...");
+              mycont.appendChild(cont);
+              document.getElementById("content").appendChild(mycont);
+          }
+  }
+  </script>
+
+
+</body>
 </html>

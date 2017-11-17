@@ -1,27 +1,28 @@
-body
-{
-    align-content: center;
+* {
+  box-sizing: border-box;
 }
-#upperMenu1
+.img-circle
 {
-    float: none;
-    margin-left: auto;
-    border: 2px solid none;
-    background: #333333;
-    border-radius: 8px;
+    border-radius: 50%;
+    width: 90%;
+    height: 55%;
+    position: relative;
     display: inline-block;
-    width: 100%;
+    overflow: hidden;
+    margin: 0;
 }
-
-#upperMenuButtons
-{
-    float: left;
-    margin: auto;
-    margin-bottom: 3px;
-    padding: 3px;
+.menu {
+  float:left;
+  width:19%;
+  text-align:center;
+  min-width: 150px;
 }
-
-.select
+.menuitem {
+  background: #333333;
+  padding:8px;
+  margin-top:7px;
+}
+.selecttheme
 {
     background: transparent;
     color: darkgray;
@@ -29,11 +30,18 @@ body
     border-radius: 20px;
     font-size: 14px;
 }
-
+#content
+{
+    float: left;
+    margin: auto;
+    margin-bottom: 3px;
+    padding: 3px;
+}
 .buttons
 {
-    background-color: transparent; 
+    background-color: transparent;
     border: none;
+    width:80%;
     color: darkgray;
     padding: 8px;
     text-align: center;
@@ -42,63 +50,18 @@ body
     margin: 4px;
     cursor: pointer;
     border-radius: 20px;
-    
+
 }
-
-#profile
-{
-    float: left;
-    margin: auto;
-    margin-bottom: 3px;
-    padding: 3px;
+.main {
+  float:left;
+  width:60%;
+  padding:0 20px;
 }
-
-
-#content
-{
-    float: left;
-    margin: auto;
-    margin-bottom: 3px;
-    padding: 3px;
-}
-
-#main
-{
-    float: none;
-    margin-left: auto;
-    border: 2px solid none;
-    border-radius: 8px;
-
-    width: 100%;
-}
-
-#upperMenuSelection
-{
-    float: right;
-    margin: auto;
-    color: darkgray;
-    
-}
-
-
-.img-circle 
-{
-    border-radius: 50%;
-    width: 35%;
-    height: 35%;
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    margin: 0;
-}
-
-.media
-{
-    border-radius: 50%;
-    width: 15%;
-    height: 15%;
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    margin: 0;
+.right {
+  background-color:#e5e5e5;
+  float:left;
+  width:20%;
+  padding:15px;
+  margin-top:7px;
+  text-align:center;
 }
